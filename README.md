@@ -18,7 +18,7 @@
 A Novel Community Streamflow Evaluation System (CSES) to evaluate hydrological model performance, currently using a standardized NHDPlus data model.
 CSES evaluates modeled streamflow to over 5,000 in situ USGS monitoring sites, providing interactive visualizations for an in-depth analysis.
 
-![SupportLogo](./Images/SupportLogo.JPG)
+![SupportLogo](https://github.com/CIROH-UA/Tethys-CSES/blob/main/Images/SupportLogo.JPG)
 
 ## Application Overview
 Given the launch of the [Cooperative Institute for Research to Operations in Hydrology (CIROH)](https://ciroh.ua.edu/) in April, 2020, CIROH scientists from 28 different academic, government, and private are working to improve the understanding of hydrologic processes, operational hydrologic forecasting techniques and workflows, community water modeling, translation of forecasts to actionable products, and use of water predictions in decision making.
@@ -29,7 +29,7 @@ This GitHub repository contains the code to create an innovative [Tethys Web Pla
 By using CSES, researchers and practitioners can interact with model outputs and evaluate the performance of hydrological models (currently the NWM v2.1) for their region. 
 
 ### State Evaluation Methods
-![StateEval](./Images/StateEval.JPG)
+![StateEval](https://github.com/CIROH-UA/Tethys-CSES/blob/main/Images/StateEval.JPG)
 
 The State_Controller.py file is the core of the State Evaluation methods. 
 The evaluation class defaults to the great state of Alabama and the National Water Model v2.1 retrospective dataset, which is a fully functional page supporting interactivity to explore model performance.
@@ -39,7 +39,7 @@ We suggest a date range no longer than 1-year, as longer ranges take much longer
 No plot showing, there likely is no model or observational data for the inputs, try a differnt location!
 
 ### Reach Evaluation Methods
-![ReachEval](./Images/ReachEval.JPG)
+![ReachEval](https://github.com/CIROH-UA/Tethys-CSES/blob/main/Images/ReachEval.JPG)
 
 The Reach_Controller.py file is the core of the Reach Evaluation methods. 
 The evaluation class defaults to a select number of NWIS sites in southern Utah and the National Water Model v2.1 retrospective dataset.
@@ -50,7 +50,7 @@ No plot showing, there likely is no model or observational data for the inputs, 
 
 
 ### HUCid Evaluation Methods
-![HUCEval](./Images/HUCEval.JPG)
+![HUCEval](https://github.com/CIROH-UA/Tethys-CSES/blob/main/Images/HUCEval.JPG)
 
 The HUC_Controller.py file is the core of the HUC Evaluation methods. 
 The evaluation class defaults to the Jordan River Basin in northern Utah and the National Water Model v2.1 retrospective dataset.
