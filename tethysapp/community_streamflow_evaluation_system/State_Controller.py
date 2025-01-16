@@ -40,24 +40,10 @@ from django.http import HttpResponse
 from .utils import combine_jsons, reach_json
 
 #Set Global Variables
-try:
-    ACCESS_KEY_ID = app.get_custom_setting('Access_key_ID')
-    ACCESS_KEY_SECRET = app.get_custom_setting('Secret_access_key')
-except Exception:
-    ACCESS_KEY_ID = ''
-    ACCESS_KEY_SECRET = ''
-
-#AWS Data Connectivity
-#start session
-SESSION = boto3.Session(
-    aws_access_key_id=ACCESS_KEY_ID,
-    aws_secret_access_key=ACCESS_KEY_SECRET
-)
-s3 = SESSION.resource('s3')
 
 BUCKET_NAME = 'streamflow-app-data'
-BUCKET = s3.Bucket(BUCKET_NAME) 
 S3 = boto3.resource('s3', config=Config(signature_version=UNSIGNED))
+BUCKET = S3.Bucket(BUCKET_NAME) 
 
 #Controller base configurations
 BASEMAPS = [
@@ -230,7 +216,7 @@ class State_Eval(MapLayout):
       
             # USGS stations - from AWS s3
             stations_path = f"GeoJSON/StreamStats_{state_id}_4326.geojson" 
-            obj = s3.Object(BUCKET_NAME, stations_path)
+            obj = S3.Object(BUCKET_NAME, stations_path)
 
             # set the map extend based on the stations
             gdf = gpd.read_file(obj.get()['Body'], driver='GeoJSON')
@@ -275,7 +261,7 @@ class State_Eval(MapLayout):
     
             # USGS stations - from AWS s3
             stations_path = f"GeoJSON/StreamStats_{state_id}_4326.geojson" #will need to change the filename to have state before 4326
-            obj = s3.Object(BUCKET_NAME, stations_path)
+            obj = S3.Object(BUCKET_NAME, stations_path)
             stations_geojson = json.load(obj.get()['Body']) 
 
             # set the map extend based on the stations
